@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080d18">
+    <title>Grade System | Student Evaluation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="background-grid"></div>
+
+    <main class="container">
+        <header class="topbar">
+            <a class="brand" href="#" aria-label="Grade System Home">
+                <span class="brand-icon">&lt;/&gt;</span>
+                <span>GRADE<span class="accent">SYS</span></span>
+            </a>
+
+            <div class="system-status">
+                <span class="status-dot"></span>
+                SYSTEM READY
+            </div>
+        </header>
+
+        <section class="hero">
+            <p class="eyebrow">// STUDENT PERFORMANCE MONITOR</p>
+            <h1>Academic <span>Evaluator</span></h1>
+            <p class="hero-description">
+                Analisis nilai akademik dengan cepat, akurat, dan sederhana.
+            </p>
+        </section>
+
+        <section class="dashboard">
+            <div class="panel input-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-number">01 / INPUT DATA</p>
+                        <h2>Student Information</h2>
+                    </div>
+                    <span class="panel-icon">⌘</span>
+                </div>
+
+                <form id="formNilai" novalidate>
+                    <div class="input-group">
+                        <label for="nama">NAMA MAHASISWA</label>
+                        <input
+                            type="text"
+                            id="nama"
+                            name="nama"
+                            placeholder="Masukkan nama mahasiswa..."
+                            maxlength="80"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="nilai">NILAI AKADEMIK</label>
+                        <div class="input-wrapper">
+                            <input
+                                type="number"
+                                id="nilai"
+                                name="nilai"
+                                placeholder="0 - 100"
+                                min="0"
+                                max="100"
+                                step="1"
+                                required
+                            >
+                            <span class="input-suffix">PTS</span>
+                        </div>
+                        <p class="hint">Rentang nilai yang valid: 0–100</p>
+                    </div>
+
+                    <p id="pesanError" class="error-message"
+                       role="alert" hidden></p>
+
+                    <button type="submit" class="submit-btn">
+                        <span>EXECUTE EVALUATION</span>
+                        <span class="arrow">→</span>
+                    </button>
+                </form>
+
+                <div id="hasil" class="result" hidden aria-live="polite">
+                    <div class="result-top">
+                        <span class="section-number">02 / ANALYSIS RESULT</span>
+                        <span id="statusBadge" class="status-badge"></span>
+                    </div>
+
+                    <p class="result-label">STUDENT</p>
+                    <h3 id="hasilNama" class="student-name"></h3>
+
+                    <div class="score-display">
+                        <div>
+                            <p class="result-label">FINAL SCORE</p>
+                            <p id="hasilNilai" class="score-number"></p>
+                        </div>
+                        <div class="grade-display">
+                            <p class="result-label">GRADE</p>
+                            <p id="hasilGrade" class="grade-number"></p>
+                        </div>
+                    </div>
+
+                    <div class="advice-box">
+                        <p class="result-label">// STUDY RECOMMENDATION</p>
+                        <p id="hasilSaran"></p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="panel guide-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-number">03 / REFERENCE</p>
+                        <h2>Grade Protocol</h2>
+                    </div>
+                    <span class="panel-icon">▤</span>
+                </div>
+
+                <p class="guide-description">
+                    Standar kategori penilaian yang digunakan sistem.
+                </p>
+
+                <ul id="daftarGrade" class="grade-list"></ul>
+
+                <div class="info-box">
+                    <span class="info-icon">i</span>
+                    <p>
+                        Grade A, B, dan C dinyatakan lulus.
+                        Grade D dan E memerlukan perbaikan.
+                    </p>
+                </div>
+
+                <div class="tech-stack">
+                    <p class="section-number">TECH STACK</p>
+                    <div class="tech-tags">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <footer class="footer">
+            <span>GRADE.SYS <span class="accent">v1.0</span></span>
+            <span>BUILT FOR LEARNING <span class="footer-symbol">◆</span></span>
+        </footer>
+    </main>
+</body>
+</html>
+
